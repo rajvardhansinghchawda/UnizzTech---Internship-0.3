@@ -22,10 +22,10 @@ public class currency {
         }
          if (from<=4 && to<=4) {
             double amount;
-            System.out.println("Entre amount");
+            System.out.println("Entre amount which you want to convert");
             amount = input.nextDouble();
             var sc = new convertor(to, from, amount);
-            sc.setCurrenies(currenies);
+            sc.setCurrencies(currenies);
             sc.Calculate();
         }
         else

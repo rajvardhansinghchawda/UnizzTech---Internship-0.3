@@ -4,20 +4,18 @@ public class convertor {
     private int from;
     private int to;
     private double amount;
-    public String[] currenies = new String[4];
+    public String[] currencies = new String[4];
     public convertor(int to, int from, double amount) {
         this.to = to;
         this.from = from;
         this.amount = amount;
     }
 
-    public void setCurrenies(String[] currenies) {
-        this.currenies = currenies;
+    public void setCurrencies(String[] currencies) {
+        this.currencies = currencies;
     }
     public float[] arrMultiple = new float[4];
-
-
-
+    
         public void Calculate() {
             switch (from){
                 case 1:{
@@ -41,7 +39,7 @@ public class convertor {
                 }
 
             }
-            System.out.println( currenies[from-1] +" to "+ currenies[to-1]+ " is " + amount*arrMultiple[to-1] );
+            System.out.println( currencies[from-1] +" to "+ currencies[to-1]+ " is " + amount*arrMultiple[to-1] );
 
                 }
 
