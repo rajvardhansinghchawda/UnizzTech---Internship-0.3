@@ -14,32 +14,32 @@ public class convertor {
     public void setCurrencies(String[] currencies) {
         this.currencies = currencies;
     }
-    public float[] arrMultiple = new float[4];
+    public float[] CurrencyRate = new float[4];
     
         public void Calculate() {
             switch (from){
                 case 1:{
-                    arrMultiple = new float[]{1, 0.011f, 0.0093f, 0.012f};
+                    CurrencyRate = new float[]{1, 0.011f, 0.0093f, 0.012f};
                     break;
                 }
                 case 2:
                 {
-                      arrMultiple = new float[]{89.19f, 1, 0.83f, 1.04f};
+                      CurrencyRate = new float[]{89.19f, 1, 0.83f, 1.04f};
                     break;
                 }
                 case 3:
                 {
-                     arrMultiple = new float[]{107.37f, 1.20f, 1, 1.26f};
+                     CurrencyRate = new float[]{107.37f, 1.20f, 1, 1.26f};
                     break;
                 }
                 case 4:
                 {
-                     arrMultiple = new float[]{85.50f, 0.96f, 0.80f, 1};
+                     CurrencyRate = new float[]{85.50f, 0.96f, 0.80f, 1};
                     break;
                 }
 
             }
-            System.out.println( currencies[from-1] +" to "+ currencies[to-1]+ " is " + amount*arrMultiple[to-1] );
+            System.out.println( currencies[from-1] +" to "+ currencies[to-1]+ " is " + amount* CurrencyRate[to-1] );
 
                 }
 

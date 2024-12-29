@@ -2,21 +2,22 @@ package firstTask;
 
 import java.util.Scanner;
 
-public class currency {
+public class Main {
     public static void main(String[] args) {
         int from;
         int to;
-         String[] currenies = {"rupee", "EUR", "BRITISH POUND","USD"};
+         String[] currencies = {"rupee", "EUR", "BRITISH POUND","USD"};
  while(true) {
-        System.out.println("1. rupee    2.EUR   3.BRITISH POUND  4.USD");
+     System.out.println("Welcome to the Currency Converter! ");
+        System.out.println("1. Rupee    2.Euro(EUR)   3.BRITISH POUND (GBP) 4.US Dollar (USD)");
         Scanner input = new Scanner(System.in);
         while (true) {
-        System.out.print(" From: ");
+        System.out.print(" From Currency : ");
         from = input.nextInt();
          if (from>0 && from<=4) { break;}
         }
         while (true) {
-            System.out.print(" To: ");
+            System.out.print(" To Currency : ");
             to = input.nextInt();
             if (to>0 && to<=4) { break;}
         }
@@ -25,7 +26,7 @@ public class currency {
             System.out.println("Entre amount which you want to convert");
             amount = input.nextDouble();
             var sc = new convertor(to, from, amount);
-            sc.setCurrencies(currenies);
+            sc.setCurrencies(currencies);
             sc.Calculate();
         }
         else
