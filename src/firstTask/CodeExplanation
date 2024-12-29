@@ -1,116 +1,18 @@
-### Full Explanation of the Java Currency Converter Code
+### Java Currency Converter Code
 
-#### **1. Code Overview**
+This Java program is a simple currency converter that allows users to convert amounts between four predefined currencies: Rupee, Euro (EUR), British Pound (GBP), and US Dollar (USD). It consists of two classes:
 
-This Java program is a currency converter that allows users to convert amounts between four predefined currencies:
+1. **Main Class**:
 
-- Rupee
-- Euro (EUR)
-- British Pound (GBP)
-- US Dollar (USD)
+   - Manages user input and interaction.
+   - Collects the source and target currencies, and the amount to be converted.
+   - Repeatedly prompts the user to perform conversions until they choose to exit.
 
-The program is structured into two classes:
+2. **Convertor Class**:
 
-1. `Main`: Handles user interaction and initiates the conversion process.
-2. `convertor`: Performs the conversion calculations.
+   - Contains the conversion logic.
+   - Uses predefined exchange rates based on the selected source currency.
+   - Calculates and displays the converted amount in the target currency.
 
-#### **2. Program Components**
-
-##### \*\*2.1 Class: \*\***`Main`**
-
-The `Main` class is the entry point of the program. It includes the `main` method, which interacts with the user, collects input, and calls methods for currency conversion.
-
-- **Variables:**
-
-  - `from` and `to`: Represent the indices of the source and target currencies.
-  - `currencies`: An array holding the names of the currencies.
-
-- **Steps in ************`Main`************:**
-
-  1. **Welcome Message**: Displays a menu of currency options.
-  2. **User Input**:
-     - Prompts the user to select the source (`from`) and target (`to`) currencies.
-     - Validates input to ensure the choice is within the range (1-4).
-  3. **Amount Input**: Asks the user for the amount to convert.
-  4. **Conversion**:
-     - Creates an instance of the `convertor` class, passing `from`, `to`, and the amount.
-     - Sets the currency names in the `convertor` object.
-     - Calls the `Calculate` method to perform the conversion.
-  5. **Repeat Option**: Allows the user to perform additional conversions or exit.
-
-##### \*\*2.2 Class: \*\***`convertor`**
-
-The `convertor` class contains the logic for currency conversion.
-
-- **Attributes:**
-
-  - `from` and `to`: Indices for the source and target currencies.
-  - `amount`: The amount of money to be converted.
-  - `currencies`: An array to store currency names.
-  - `CurrencyRate`: An array of conversion rates for the selected currency.
-
-- **Constructor:**
-
-  - Initializes `from`, `to`, and `amount` with the provided values.
-
-- **Methods:**
-
-  - `setCurrencies(String[] currencies)`: Sets the `currencies` array.
-  - `Calculate()`: Calculates the converted amount using predefined exchange rates.
-
-#### \*\*3. Conversion Logic in \*\***`convertor`**
-
-The `Calculate` method uses a `switch` statement to determine the exchange rates based on the source currency:
-
-- **Case 1 (Rupee):**
-
-  - Conversion rates: `{1, 0.011, 0.0093, 0.012}`
-  - Example: Converting 100 Rupees to USD: `100 * 0.012 = 1.2 USD`
-
-- **Case 2 (EUR):**
-
-  - Conversion rates: `{89.19, 1, 0.83, 1.04}`
-  - Example: Converting 50 EUR to GBP: `50 * 0.83 = 41.5 GBP`
-
-- **Case 3 (British Pound):**
-
-  - Conversion rates: `{107.37, 1.20, 1, 1.26}`
-  - Example: Converting 30 GBP to USD: `30 * 1.26 = 37.8 USD`
-
-- **Case 4 (USD):**
-
-  - Conversion rates: `{85.50, 0.96, 0.80, 1}`
-  - Example: Converting 200 USD to EUR: `200 * 0.96 = 192 EUR`
-
-The method outputs the conversion result in the format:
-
-```
-<source_currency> to <target_currency> is <converted_amount>
-```
-
-#### **4. Program Flow**
-
-1. Display the menu of currencies.
-2. Take valid inputs for source currency, target currency, and amount.
-3. Use the `convertor` class to perform the conversion.
-4. Display the result.
-5. Ask the user if they want to perform another conversion or exit.
-
-#### **5. Example Execution**
-
-**Input:**
-
-```
-From Currency: 1 (Rupee)
-To Currency: 4 (USD)
-Amount: 500
-```
-
-**Output:**
-
-```
-Rupee to USD is 6.0.
-```
-
-This code demonstrates a simple yet functional approach to building a currency converter in Java. .
+The exchange rates are hardcoded, and the program uses a `switch` statement for rate selection. The program provides a user-friendly console-based interface for currency conversion.
 
